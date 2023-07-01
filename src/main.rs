@@ -25,9 +25,9 @@ fn main() {
     for file in files {
         let tgt = file.with_extension("jpg");
         convert(&file, &tgt);
-        println!("converted {:?} to {:?}", &file, &tgt);
+        println!("Converted {:?} to {:?}", &file, &tgt);
     }
-    println!("finish all tasks. see you next time~")
+    println!("Finish all tasks. See you next time~")
 }
 
 fn convert(src: &Path, tgt: &Path) {
