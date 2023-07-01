@@ -23,6 +23,12 @@ fn main() {
     };
 
     for file in files {
+        match file.extension(){
+            Some(extension) => if extension.to_ascii_lowercase()!="livp"{
+                continue;
+            },
+            None => continue,
+        }
         let tgt = file.with_extension("jpg");
         convert(&file, &tgt);
         println!("Converted {:?} to {:?}", &file, &tgt);
