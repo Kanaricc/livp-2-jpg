@@ -15,11 +15,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
     - name: Install dependencies
       run: |
         sudo apt update
-        sudo apt install libheif-dev -y
+        sudo apt install libde265-dev -y
+    - name: Checkout tools repo
+      uses: actions/checkout@v3
+      with:
+        repository: strukturag/libheif
+        path: libheif
+    - name: Compile libheif
+      run: |
+        cd libheif
+        mkdir build
+        cmake --present=release ..
+        make
+        make install
+    - uses: actions/checkout@v3
     - name: Build
       run: cargo build --verbose
     - name: Run tests
