@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
-      run: sudo apt install libheif-dev -y
+      run: sudo apt install libheif-dev=1.14 -y
     - name: Build
       run: cargo build --verbose
     - name: Run tests
