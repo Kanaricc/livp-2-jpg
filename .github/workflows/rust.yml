@@ -28,7 +28,7 @@ jobs:
       run: |
         cd libheif
         mkdir build
-        cmake --present=release ..
+        cmake --preset=release ..
         make
         make install
     - uses: actions/checkout@v3
