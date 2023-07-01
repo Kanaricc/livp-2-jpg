@@ -28,6 +28,7 @@ jobs:
       run: |
         cd libheif
         mkdir build
+        cd build        
         cmake --preset=release ..
         make
         make install
