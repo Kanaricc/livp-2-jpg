@@ -31,7 +31,7 @@ jobs:
         cd build        
         cmake --preset=release ..
         make
-        make install
+        sudo make install
     - uses: actions/checkout@v3
     - name: Build
       run: cargo build --verbose
